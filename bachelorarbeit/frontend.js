@@ -1,5 +1,5 @@
 /**
- * Bachelorarbeit wise 2023/2024
+ * Bachelorarbeit SoSe 2024
  * @author: Sebastian, Andres
  * Links: URL:https://github.com/geoman-io/leaflet-geoman
  *        URL: https://stackoverflow.com/questions/7342957/how-do-you-round-to-1-decimal-place-in-javascript
