@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="paraglider_dark_mode.svg" type="image/icon type">
+    <title>OGN Gliderfinder</title>
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- Bootstrap links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script defer src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Leaflet CDN import -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    <script defer src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+    <!-- Geoman-io CDN import -->
+    <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css" />
+    <script defer src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
+
+    <!-- used js.files -->
+    <script defer src="frontend.js"></script>
+    <script defer src="client.js"></script>
+	
+    <!-- online color check -->
+    <style>
+	.form-control .online {
+		background-color: green;
+		color: white;
+	}
+	.form-control .offline {
+		background-color: grey;
+	}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-9">
+            <header style="padding-top: 2rem">
+                <h1>OGN Gliderfinder<hr></h1>
+            </header>
+            <div class="row space">
+                <div class="col-sm">
+                    <select class="form-control selector" id="selector">
+                        <option>Freund auswählen</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary" id="load">Laden</button>
+                    <button type="button" class="btn btn-danger" id="delete">Löschen</button>
+                    <button type="button" class="btn btn-primary" id="online_check">Online-Check</button>
+                </div>
+            </div>
+	
+		<div class="alert alert-success space" id="alert" role="alert">Suchen Sie einen Freund!</div>
+
+            <div class="row space">
+                <div class="col-sm">
+                    <input type="text" class="form-control" id="name" placeholder="Name">
+		    <input type="text" class="form-control" id="regid" placeholder="Reg.-ID">
+                    <button type="submit" class="btn btn-primary" id="save">Speichern</button>
+                </div>
+            </div>
+            <div class="row space">
+                <div class="col-sm">
+                    <label for="ex1">Breitengrad</label>
+                    <input class="form-control" id="ex1" type="text" placeholder="xx.xxxxxx" size="10" readonly="readonly"/></div>
+                <div class="col-sm">
+                    <label for="ex2">L&auml;ngengrad</label>
+                    <input class="form-control" id="ex2" type="text" placeholder="xx.xxxxxx" readonly="readonly"/></div>
+                <div class="col-sm">
+                <div class="col-sm">
+                    <label for="ex3">Tracking Methode</label>
+                    <button type="button" class="btn btn-primary" id="changeTrackingMethod">timebased Tracking</button>
+                <div class="col-sm">
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+<div id="map"></div>
+
+</body>
+</html>

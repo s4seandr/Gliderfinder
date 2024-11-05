@@ -1,0 +1,17 @@
+#text {
+  margin-top: 25px;
+  margin-left: 150px;
+  margin-right: 150px;
+
+}
+
+#map {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 25px;
+  height: 500px;
+}
+
+.space {
+  margin-top: 25px;
+}
